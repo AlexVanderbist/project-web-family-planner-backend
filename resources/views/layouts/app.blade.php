@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-info navbar-static-top">
+        <nav class="navbar navbar-info navbar-fixed-top">
             <div class="container-fluid">
                 <div class="navbar-header">
 
@@ -36,7 +36,7 @@
 
                     <!-- Branding Image -->
                     <a class="navbar-brand" href="#">
-                        <img src="imgs/logo.svg" alt="Planni">
+                        <img src="/images/logo.svg" alt="Planni">
                     </a>
                 </div>
 

@@ -28,7 +28,7 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                     <a class="navbar-brand" href="#">
-                        <img src="imgs/logo.svg" alt="Planni">
+                        <img src="/images/logo.svg" alt="Planni">
                     </a>
                 </div>
             </div>

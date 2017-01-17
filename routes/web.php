@@ -20,6 +20,8 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function () {
 
+    Route::get('/dashboard', 'DashboardController@index');
+
     Route::resource('/screens', 'ScreenController');
 
     Route::get('/household/settings', 'HouseholdController@settings')->name('household.settings');
