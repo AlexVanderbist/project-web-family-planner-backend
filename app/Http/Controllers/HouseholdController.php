@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
+use App\Household;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -17,7 +17,7 @@ class HouseholdController extends Controller
         return view('household.settings', compact('household'));
     }
 
-    public function update(Request $request, User $household) {
+    public function update(Request $request, Household $household) {
         // TODO: Write validations for the update function
         $household->fill($request->only('name', 'address'));
         $household->save();

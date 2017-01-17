@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Screen;
 use Illuminate\Http\Request;
+use Auth;
 
 /**
  * Class ScreenController
@@ -42,7 +43,10 @@ class ScreenController extends Controller
     {
         // TODO: RequestValidations
         $screen = new Screen();
-        $screen->fill($request->all())->save();
+        $screen->fill($request->all());
+        $screen->code = strtoupper($screen->code);
+        $screen->household_id = Auth::user()->id;
+        $screen->save();
         return redirect()->route('screens.index')->with('status', 'Screen added!');
     }
 
@@ -79,7 +83,9 @@ class ScreenController extends Controller
     public function update(Request $request, Screen $screen)
     {
         // TODO: RequestValidations
-        $screen->fill($request->all())->save();
+        $screen->fill($request->all());
+        $screen->code = strtoupper($screen->code);
+        $screen->save();
         return redirect()->route('screens.index')->with('status', 'Screen updated!');
     }
 

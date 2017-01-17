@@ -14,7 +14,5 @@ use Illuminate\Http\Request;
 */
 
 Route::group(['middleware' => 'auth.screen'], function () {
-    Route::get('/screen', function (Request $request) {
-        return response($request->screen);
-    });
+    Route::get('/screen', 'API\ScreenController@index');
 });

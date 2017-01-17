@@ -9,10 +9,12 @@
     <p class="lead">
         Planni Screens are the devices you put in your livingroom, kitchen or bedroom.<br>
         You can assign appropriate slides to each screen or change settings.<br>
-        <a href="{{route('screens.create')}}" class="btn btn-lg btn-primary btn-raised">
-            <span class="glyphicon glyphicon-plus"></span>
-            Add another screen
-        </a>
+        @if($screens->count())
+            <a href="{{route('screens.create')}}" class="btn btn-lg btn-primary btn-raised">
+                <span class="glyphicon glyphicon-plus"></span>
+                Add another screen
+            </a>
+        @endif
     </p>
 
     @if($screens->count())
@@ -41,7 +43,7 @@
         </div>
     @else
         <h2>You don't have any screens yet!</h2>
-        <a href="{{route('screens.create')}}" class="btn btn-lg btn-primary">
+        <a href="{{route('screens.create')}}" class="btn btn-lg btn-raised btn-primary">
             <i class="glyphicon glyphicon-plus"></i>
             Add a screen
         </a>

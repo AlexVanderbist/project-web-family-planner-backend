@@ -13,6 +13,10 @@ class Screen extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'code', 'type',
+        'name', 'code', 'type', 'household_id'
     ];
+
+    public function household() {
+        return $this->belongsTo(Household::class);
+    }
 }

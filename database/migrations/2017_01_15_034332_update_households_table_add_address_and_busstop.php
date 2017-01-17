@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class UpdateUsersTableAddAddressAndBusstop extends Migration
+class UpdateHouseholdsTableAddAddressAndBusstop extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,9 @@ class UpdateUsersTableAddAddressAndBusstop extends Migration
      */
     public function up()
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->string('address');
-            $table->string('busstop');
+        Schema::table('households', function (Blueprint $table) {
+            $table->string('address')->nullable();
+            $table->string('busstop')->nullable();
         });
     }
 
@@ -26,7 +26,7 @@ class UpdateUsersTableAddAddressAndBusstop extends Migration
      */
     public function down()
     {
-        Schema::table('users', function (Blueprint $table) {
+        Schema::table('households', function (Blueprint $table) {
             $table->dropColumn('address');
             $table->dropColumn('busstop');
         });

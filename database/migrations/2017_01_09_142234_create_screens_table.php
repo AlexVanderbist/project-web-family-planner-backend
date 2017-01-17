@@ -18,6 +18,7 @@ class CreateScreensTable extends Migration
             $table->string('name');
             $table->string('code');
             $table->integer('type');
+            $table->integer('household_id');
             $table->timestamps();
         });
     }
