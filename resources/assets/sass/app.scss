@@ -7,3 +7,23 @@
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Material Bootstrap
+@import "node_modules/bootstrap-material-design/dist/css/bootstrap-material-design";
+@import "node_modules/bootstrap-material-design/dist/css/ripples.min";
+
+
+.navbar-brand {
+    padding: 0 15px;
+    img {
+        height: 100%;
+    }
+}
+
+.navbar.navbar-info {
+    background-color: $brand-info;
+}
+
+.jumbotron {
+    margin-top:100px;
+}
