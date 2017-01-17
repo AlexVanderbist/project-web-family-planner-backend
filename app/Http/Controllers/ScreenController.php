@@ -80,7 +80,7 @@ class ScreenController extends Controller
     {
         // TODO: RequestValidations
         $screen->fill($request->all())->save();
-        return redirect()->route('screens.edit', $screen->id)->with('status', 'Screen updated!');
+        return redirect()->route('screens.index')->with('status', 'Screen updated!');
     }
 
     /**

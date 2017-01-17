@@ -20,13 +20,13 @@ Route::get('/home', 'HomeController@index');
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/dashboard', 'DashboardController@index');
+    Route::get('/dashboard', 'DashboardController@index')->name('dashboard');
 
     Route::resource('/screens', 'ScreenController');
 
     Route::resource('/messages', 'MessageController');
 
     Route::get('/household/settings', 'HouseholdController@settings')->name('household.settings');
-    Route::put('/household/settings', 'HouseholdController@update')->name('household.update');
+    Route::put('/household/settings/{household}', 'HouseholdController@update')->name('household.update');
 
 });

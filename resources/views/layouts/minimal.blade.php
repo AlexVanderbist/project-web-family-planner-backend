@@ -27,7 +27,7 @@
             <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{{route('home')}}">
                         <img src="/images/logo.svg" alt="Planni">
                     </a>
                 </div>

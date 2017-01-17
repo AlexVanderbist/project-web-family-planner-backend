@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Household;
+use App\User;
 use Illuminate\Http\Request;
 use Auth;
 
@@ -13,7 +13,14 @@ use Auth;
 class HouseholdController extends Controller
 {
     public function settings(Request $request) {
-        $user = Auth::user();
-        return view('household.settings', compact('user'));
+        $household = Auth::user();
+        return view('household.settings', compact('household'));
+    }
+
+    public function update(Request $request, User $household) {
+        // TODO: Write validations for the update function
+        $household->fill($request->only('name', 'address'));
+        $household->save();
+        return redirect(route('household.settings'))->with('status', 'Configuration updated successfully!');
     }
 }

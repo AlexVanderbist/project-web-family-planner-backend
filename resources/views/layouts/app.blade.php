@@ -35,7 +35,7 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="#">
+                    <a class="navbar-brand" href="{{route('dashboard')}}">
                         <img src="/images/logo.svg" alt="Planni">
                     </a>
                 </div>
@@ -63,7 +63,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
-                                    <li><a href="{{route('screens.index')}}">Settings</a></li>
+                                    <li><a href="{{route('household.settings')}}">Settings</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
@@ -84,6 +84,13 @@
         </nav>
 
         <div class="container">
+            @if(Session::get('status'))
+                <div class="alert alert-dismissible alert-success">
+                    <button type="button" class="close" data-dismiss="alert">×</button>
+                    {{Session::get('status')}}
+                </div>
+            @endif
+
             @yield('content')
         </div>
     </div>
