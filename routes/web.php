@@ -11,12 +11,18 @@
 |
 */
 
+Auth::routes();
+
 Route::get('/', function () {
     return redirect('/home');
 });
-
-Auth::routes();
-
 Route::get('/home', 'HomeController@index');
 
-Route::resource('/screens', 'ScreenController');
+Route::group(['middleware' => 'auth'], function () {
+
+    Route::resource('/screens', 'ScreenController');
+
+    Route::get('/household/settings', 'HouseholdController@settings')->name('household.settings');
+    Route::put('/household/settings', 'HouseholdController@update')->name('household.update');
+
+});

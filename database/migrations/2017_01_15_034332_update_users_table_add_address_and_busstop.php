@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateScreensTable extends Migration
+class UpdateUsersTableAddAddressAndBusstop extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateScreensTable extends Migration
      */
     public function up()
     {
-        Schema::create('screens', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('name');
-            $table->string('code');
-            $table->integer('type');
-            $table->timestamps();
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('address');
+            $table->string('busstop');
         });
     }
 
@@ -29,6 +26,9 @@ class CreateScreensTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('screens');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('address');
+            $table->dropColumn('busstop');
+        });
     }
 }

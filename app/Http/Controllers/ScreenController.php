@@ -5,22 +5,20 @@ namespace App\Http\Controllers;
 use App\Screen;
 use Illuminate\Http\Request;
 
+/**
+ * Class ScreenController
+ * @package App\Http\Controllers
+ */
 class ScreenController extends Controller
 {
-    private $_screens;
-
-    public function __construct (Screen $screens) {
-        $this->_screens = $screens;
-    }
-
     /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
+     * @param Screen $screens
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index()
+    public function index(Screen $screens)
     {
-        //
+        $screens = $screens->all();
+        return view('screens.index', compact('screens'));
     }
 
     /**
