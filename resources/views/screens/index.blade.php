@@ -5,30 +5,38 @@
 @section('content')
 
     <div class="container">
-        <h1>Screens</h1>
-        <p>Small description about screens goes here.</p>
+        <h1>Planni Screens</h1>
+
+        <p class="lead">
+            Planni Screens are the devices you put in your livingroom, kitchen or bedroom.<br>
+            You can assign appropriate slides to each screen or change settings.<br>
+            <a href="{{route('screens.create')}}" class="btn btn-lg btn-primary btn-raised">
+                <span class="glyphicon glyphicon-plus"></span>
+                Add another screen
+            </a>
+        </p>
 
         @if($screens->count())
             <div class="row">
                 @foreach ($screens->chunk(4) as $screenChunk)
                     @foreach($screenChunk as $screen)
                         <div class="col-md-3">
-                            <div class="well well-sm text-center">
-                                <h2>{{$screen->name}}</h2>
-                                <a href="{{route('screens.edit', $screen->id)}}">
-                                    <i class="glyphicon glyphicon-cog"></i> Settings
-                                </a>
+                            <div class="panel panel-default panel-screen">
+                                <div class="panel-heading">
+                                    <h2 class="panel-title">{{$screen->name}}</h2>
+                                </div>
+                                <div class="panel-body">
+                                    <p>
+                                        Type: <strong>{{getScreenType($screen->type)}} screen</strong>
+                                    </p>
+                                    <a href="{{route('screens.edit', $screen->id)}}" class="btn btn-raised btn-primary btn-fab">
+                                        <i class="material-icons glyphicon glyphicon-cog"></i>
+                                    </a>
+
+                                </div>
                             </div>
                         </div>
                     @endforeach
-                    <div class="col-md-3">
-                        <div class="well well-sm text-center">
-                            <a href="{{route('screens.create')}}">
-                                <i class="glyphicon glyphicon-plus h1"></i>
-                                <h2>Add another screen</h2>
-                            </a>
-                        </div>
-                    </div>
                 @endforeach
             </div>
         @else

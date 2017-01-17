@@ -11,12 +11,12 @@
             <p>Are you new to Planni and did you just buy your first screen? Click on "New Planni household".</p>
             <div class="row">
                 <div class="col-md-6">
-                    <a href="{{route('register')}}" class="btn btn-block btn-raised btn-info">New Planni
+                    <a href="{{route('register')}}" class="btn btn-block btn-lg btn-raised btn-info">New Planni
                         household
                     </a>
                 </div>
                 <div class="col-md-6">
-                    <a href="{{route('login')}}" class="btn btn-block btn-raised btn-default">Login to Planni
+                    <a href="{{route('login')}}" class="btn btn-block btn-lg btn-raised btn-default">Login to Planni
                         Housekeeping
                     </a>
                 </div>

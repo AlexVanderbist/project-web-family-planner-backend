@@ -24,6 +24,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::resource('/screens', 'ScreenController');
 
+    Route::resource('/messages', 'MessageController');
+
     Route::get('/household/settings', 'HouseholdController@settings')->name('household.settings');
     Route::put('/household/settings', 'HouseholdController@update')->name('household.update');
 

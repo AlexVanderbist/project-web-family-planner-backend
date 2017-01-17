@@ -11669,4 +11669,10 @@ body {
   background-color: #03b5ff;
 }
 
+.panel.panel-screen .btn-fab {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
 /*# sourceMappingURL=app.css.map */

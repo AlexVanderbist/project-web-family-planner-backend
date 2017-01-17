@@ -62,3 +62,11 @@ body {
 .btn-group-raised .input-group-btn .btn:not(.btn-link):active.btn-primary {
     background-color: lighten($brand-primary, 7);
 }
+
+.panel.panel-screen {
+    .btn-fab {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+    }
+}
