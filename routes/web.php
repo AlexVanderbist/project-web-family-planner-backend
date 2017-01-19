@@ -29,4 +29,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/household/settings', 'HouseholdController@settings')->name('household.settings');
     Route::put('/household/settings/{household}', 'HouseholdController@update')->name('household.update');
 
+    Route::get('/calendars', 'CalendarController@index')->name('calendars.index');
+    Route::post('/calendars', 'CalendarController@store')->name('calendars.store');
+    Route::delete('/calendars/{calendar}', 'CalendarController@destroy')->name('calendars.destroy');
+
 });

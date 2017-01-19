@@ -38,6 +38,10 @@ class Household extends Authenticatable
         return $this->hasMany(Message::class);
     }
 
+    public function calendars() {
+        return $this->hasMany(Calendar::class);
+    }
+
     public function screens() {
         return $this->hasMany(Screen::class);
     }

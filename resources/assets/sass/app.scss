@@ -63,6 +63,19 @@ body {
     background-color: lighten($brand-primary, 7);
 }
 
+.panel.panel-primary > .panel-heading {
+    background-color: $brand-primary;
+}
+
+.form-group.is-focused label, .form-group.is-focused label.control-label {
+    color: $brand-primary;
+}
+.form-group.is-focused .form-control {
+    background-image: -webkit-gradient(linear, left top, left bottom, from($brand-primary), to($brand-primary)), -webkit-gradient(linear, left top, left bottom, from(#D2D2D2), to(#D2D2D2));
+    background-image: -webkit-linear-gradient($brand-primary, $brand-primary), -webkit-linear-gradient(#D2D2D2, #D2D2D2);
+    background-image: linear-gradient($brand-primary, $brand-primary), linear-gradient(#D2D2D2, #D2D2D2);
+}
+
 .panel.panel-screen {
     .btn-fab {
         position: absolute;

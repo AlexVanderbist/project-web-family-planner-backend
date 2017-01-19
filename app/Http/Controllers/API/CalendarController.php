@@ -8,16 +8,17 @@ use App\Http\Controllers\Controller;
 
 class CalendarController extends Controller
 {
-    public function index() {
-        $calendar = new ICal();
-        $calendar->initURL('http://mijnrooster.kdg.be/ical?5412cc20&eu=U1RVREVOVFwwMTA1MjUyLTA3&t=06e19128-26ff-499a-94b1-05c80d9414de');
+    public function index(Request $request) {
+        $calendars = $request->screen->household->calendars;
 
-        $response = [
-            'name' => $calendar->calendarName(),
-            'description' => $calendar->calendarDescription(),
-            'events' => $calendar->events()
-        ];
+        $ical = new ICal();
+        $calendars->each(function($calendar, $key) use ($ical) {
+            $ical->initURL($calendar->url);
 
-        return response($response);
+            $calendar['name'] = stripslashes($ical->calendarName());
+            $calendar['description'] = stripslashes($ical->calendarDescription());
+            $calendar['events'] = $ical->events();
+        });
+        return response($calendars);
     }
 }
