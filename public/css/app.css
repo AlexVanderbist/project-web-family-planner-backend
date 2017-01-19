@@ -11675,4 +11675,10 @@ body {
   right: 10px;
 }
 
+.well.well-message .btn-fab {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
 /*# sourceMappingURL=app.css.map */

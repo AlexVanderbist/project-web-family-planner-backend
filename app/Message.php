@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Screen extends Model
+class Message extends Model
 {
 
     /**
@@ -13,7 +13,14 @@ class Screen extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'code', 'type'
+        'message', 'signature', 'color'
+    ];
+
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'start',
+        'end'
     ];
 
     public function household() {

@@ -24,6 +24,9 @@
                     <div class="col-md-3">
                         <div class="panel panel-default panel-screen">
                             <div class="panel-heading">
+                                <a href="{{route('screens.destroy', $screen->id)}}" data-method="delete" data-token="{{csrf_token()}}" data-confirm="Are you sure you wish to delete this screen?" class="pull-right">
+                                    <span class="glyphicon glyphicon-remove"></span>
+                                </a>
                                 <h2 class="panel-title">{{$screen->name}}</h2>
                             </div>
                             <div class="panel-body">

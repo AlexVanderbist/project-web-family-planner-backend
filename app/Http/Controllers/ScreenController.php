@@ -16,9 +16,9 @@ class ScreenController extends Controller
      * @param Screen $screens
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(Screen $screens)
+    public function index()
     {
-        $screens = $screens->all();
+        $screens = Auth::user()->screens;
         return view('screens.index', compact('screens'));
     }
 
@@ -97,6 +97,8 @@ class ScreenController extends Controller
      */
     public function destroy(Screen $screen)
     {
-        //
+        $screenName = $screen->name;
+        $screen->delete();
+        return redirect(route('screens.index'))->with('status', $screenName . ' screen was removed!');
     }
 }

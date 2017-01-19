@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name') }}</title>
+    <title>@yield('title') | {{ config('app.name') }}</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -55,7 +55,7 @@
                             <li><a href="{{ url('/register') }}">Registreren</a></li>
                         @else
 
-                            <li><a href="{{route('screens.index')}}">Screens</a></li>
+                            <li><a href="{{route('messages.index')}}">Messages</a></li>
 
                             <li class="dropdown">
                                 <a href="{{route('household.settings')}}" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -63,6 +63,7 @@
                                 </a>
 
                                 <ul class="dropdown-menu" role="menu">
+                                    <li><a href="{{route('screens.index')}}">Screens</a></li>
                                     <li><a href="{{route('household.settings')}}">Settings</a></li>
                                     <li>
                                         <a href="{{ url('/logout') }}"

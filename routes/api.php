@@ -15,4 +15,8 @@ use Illuminate\Http\Request;
 
 Route::group(['middleware' => 'auth.screen'], function () {
     Route::get('/screen', 'API\ScreenController@index');
+
+    Route::get('/messages', 'API\MessageController@index');
+
+    Route::get('/calendar', 'API\CalendarController@index');
 });

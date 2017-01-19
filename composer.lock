@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "630cdb6567b283939576aae1ff64b4f4",
+    "content-hash": "ad903b0ee4785bfbfba1dea242e66dab",
     "packages": [
         {
             "name": "barryvdh/laravel-cors",
@@ -357,6 +357,60 @@
                 "tokenizer"
             ],
             "time": "2016-12-07T09:37:55+00:00"
+        },
+        {
+            "name": "johngrogg/ics-parser",
+            "version": "v2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/u01jmg3/ics-parser.git",
+                "reference": "2574be22e551abba0a47e4d695684c8e70911477"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/u01jmg3/ics-parser/zipball/2574be22e551abba0a47e4d695684c8e70911477",
+                "reference": "2574be22e551abba0a47e4d695684c8e70911477",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "squizlabs/php_codesniffer": "^2.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "ICal": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Martin Thoma",
+                    "email": "info@martin-thoma.de",
+                    "role": "Original Developer"
+                },
+                {
+                    "name": "John Grogg",
+                    "email": "john.grogg@gmail.com",
+                    "role": "Developer/Prior Owner"
+                },
+                {
+                    "name": "Jonathan Goode",
+                    "role": "Developer/Owner"
+                }
+            ],
+            "description": "ICS file parser",
+            "homepage": "https://github.com/u01jmg3/ics-parser",
+            "keywords": [
+                "ical",
+                "ics"
+            ],
+            "time": "2016-11-28T00:00:22+00:00"
         },
         {
             "name": "laravel/framework",

@@ -33,4 +33,12 @@ class Household extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function messages() {
+        return $this->hasMany(Message::class);
+    }
+
+    public function screens() {
+        return $this->hasMany(Screen::class);
+    }
 }
