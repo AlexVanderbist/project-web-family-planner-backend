@@ -71,7 +71,7 @@ class MessageController extends Controller
     public function edit(Message $message)
     {
         // TODO: Move colors to config
-        $message_colors = ['pink' => 'Pink post-it', 'yellow' => 'Yellow post-it', 'blue' => 'Blue post-it', 'green' => 'BluGreene post-it'];
+        $message_colors = ['pink' => 'Pink post-it', 'yellow' => 'Yellow post-it', 'blue' => 'Blue post-it', 'green' => 'Green post-it'];
         $message_durations = $this->getMessageDurations($message->end);
         return view('messages.form', compact('message', 'message_colors', 'message_durations'));
     }
