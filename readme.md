@@ -10,6 +10,18 @@ Set the `PlanniRequestCode` header to the code of the screen that's making the r
  
  ## Endpoints
  
+ ### /available
+ 
+ This endpoints returns an array of the possible slides with the available information in JSON format:
+ 
+ ```json
+ [
+  "messages",
+  "transport",
+  "weather"
+]
+ ```
+ 
  ### /screen
  
  This endpoint returns some information about the authenticated screen making the request: 
