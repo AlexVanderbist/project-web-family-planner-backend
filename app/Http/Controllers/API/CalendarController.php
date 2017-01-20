@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use ICal\ICal;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 
 class CalendarController extends Controller
 {
@@ -17,7 +18,7 @@ class CalendarController extends Controller
 
             $calendar['name'] = stripslashes($ical->calendarName());
             $calendar['description'] = stripslashes($ical->calendarDescription());
-            $calendar['events'] = $ical->events();
+            $calendar['events'] = $ical->eventsFromRange(Carbon::now());
         });
         return response($calendars);
     }
