@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Message;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use Auth;
 use \Carbon\Carbon;
 
@@ -39,7 +40,7 @@ class MessageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\MessageStoreRequest $request)
     {
         // TODO: Request validation
         $message = new Message();
@@ -82,7 +83,7 @@ class MessageController extends Controller
      * @param  \App\Message  $message
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Message $message)
+    public function update(Requests\MessageStoreRequest $request, Message $message)
     {
         // TODO: Request validation
         $message->fill($request->all());

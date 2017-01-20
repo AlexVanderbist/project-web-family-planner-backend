@@ -19,8 +19,8 @@
             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                 <label for="name" class="control-label">Household Name</label>
 
-                <input id="name" type="text" class="form-control" name="name"
-                       value="{{ old('name', $household->name) }}" required autofocus>
+                <input id="name" type="text" class="form-control" name="name" disabled="disabled" readonly="readonly"
+                       value="{{ old('name', $household->name) }}">
 
                 @if ($errors->has('name'))
                     <span class="help-block">
@@ -34,7 +34,7 @@
 
                     <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
                         <label for="name" class=" control-label">Town or City</label>
-                        <input id="address" type="text" class="form-control" name="address"
+                        <input id="address" type="text" class="form-control" name="address" autofocus
                                value="{{ old('address', $household->address) }}">
                         <p class="help-block">This information will be used to display the weather.</p>
         

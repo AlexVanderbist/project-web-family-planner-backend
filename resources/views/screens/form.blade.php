@@ -51,7 +51,7 @@
                     <label class="control-label" for="code">Code</label>
                     <input id="code" name="code" type="text" required autocomplete="off"
                            value="{{ $screen->code or old('code') }}"
-                           placeholder="e.g. '5DE20LK09'" class="form-control">
+                           placeholder="e.g. '5DLK09'" class="form-control">
                     <p class="help-block">
                         The code for this screen. You can find the code on the back of the device.
                     </p>

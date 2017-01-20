@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Screen;
 use Illuminate\Http\Request;
 use Auth;
+use App\Http\Requests;
 
 /**
  * Class ScreenController
@@ -39,7 +40,7 @@ class ScreenController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\ScreenStoreRequest $request)
     {
         // TODO: RequestValidations
         $screen = new Screen();
@@ -80,7 +81,7 @@ class ScreenController extends Controller
      * @param  \App\Screen  $screen
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Screen $screen)
+    public function update(Requests\ScreenUpdateRequest $request, Screen $screen)
     {
         // TODO: RequestValidations
         $screen->fill($request->all());

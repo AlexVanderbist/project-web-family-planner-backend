@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Household;
 use Illuminate\Http\Request;
 use Auth;
+use App\Http\Requests;
 
 /**
  * Class HouseholdController
@@ -17,9 +18,9 @@ class HouseholdController extends Controller
         return view('household.settings', compact('household'));
     }
 
-    public function update(Request $request, Household $household) {
+    public function update(Requests\SettingsStoreRequest $request, Household $household) {
         // TODO: Write validations for the update function
-        $household->fill($request->only('name', 'address', 'busstop'));
+        $household->fill($request->only('address', 'busstop'));
         $household->save();
         return redirect(route('household.settings'))->with('status', 'Configuration updated successfully!');
     }

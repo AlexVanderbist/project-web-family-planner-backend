@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Calendar;
 use Illuminate\Http\Request;
+use App\Http\Requests;
 use ICal\ICal;
 use Auth;
 
@@ -23,7 +24,7 @@ class CalendarController extends Controller
         return view('calendars.index', compact('calendars'));
     }
 
-    public function store (Request $request, Calendar $calendar) {
+    public function store (Requests\CalendarStoreRequest $request, Calendar $calendar) {
         $calendar->url = trim($request->url); // Small effort to ensure no errors
         $calendar->household_id = Auth::user()->id;
         $calendar->save();
