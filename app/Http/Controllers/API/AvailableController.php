@@ -10,7 +10,7 @@ class AvailableController extends Controller
     public function index(Request $request) {
         $availableSlides = [];
         
-        if($request->screen->household->calendars->count()) $availableSlides[] = 'calendars';
+        if($request->screen->household->calendars->count()) $availableSlides[] = 'calendar';
         
         if($request->screen->household->messages->count()) $availableSlides[] = 'messages';
         
