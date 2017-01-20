@@ -25,7 +25,7 @@ class SettingsStoreRequest extends FormRequest
     {
         return [
             'address' => 'max:250',
-            'busstop' => 'integer|max:25',
+            'busstop' => 'integer|size:6',
         ];
     }
 }
