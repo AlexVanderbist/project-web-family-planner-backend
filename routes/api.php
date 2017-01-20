@@ -19,4 +19,6 @@ Route::group(['middleware' => 'auth.screen'], function () {
     Route::get('/messages', 'API\MessageController@index');
 
     Route::get('/calendar', 'API\CalendarController@index');
+
+    Route::get('/available', 'API\AvailableController@index');
 });

@@ -28,19 +28,41 @@
                 </span>
                 @endif
             </div>
+            
+            <div class="row">
+                <div class="col-md-6">
 
-            <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                <label for="name" class=" control-label">Town or City</label>
-                <input id="address" type="text" class="form-control" name="address"
-                       value="{{ old('address', $household->address) }}" required>
-                <p class="help-block">This information will be used to display the weather.</p>
-
-                @if ($errors->has('address'))
-                    <span class="help-block">
-                    <strong>{{ $errors->first('address') }}</strong>
-                </span>
-                @endif
+                    <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
+                        <label for="name" class=" control-label">Town or City</label>
+                        <input id="address" type="text" class="form-control" name="address"
+                               value="{{ old('address', $household->address) }}">
+                        <p class="help-block">This information will be used to display the weather.</p>
+        
+                        @if ($errors->has('address'))
+                            <span class="help-block">
+                            <strong>{{ $errors->first('address') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    
+                </div>
+                <div class="col-md-6">
+                    
+                    <div class="form-group{{ $errors->has('busstop') ? ' has-error' : '' }}">
+                        <label for="name" class=" control-label">DeLijn Busstop ID</label>
+                        <input id="busstop" type="text" class="form-control" name="busstop"
+                               value="{{ old('busstop', $household->busstop) }}">
+        
+                        @if ($errors->has('busstop'))
+                            <span class="help-block">
+                            <strong>{{ $errors->first('busstop') }}</strong>
+                        </span>
+                        @endif
+                    </div>
+                    
+                </div>
             </div>
+
 
             <button class="btn btn-primary btn-raised">
                 Save household settings

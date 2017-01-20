@@ -19,7 +19,7 @@ class HouseholdController extends Controller
 
     public function update(Request $request, Household $household) {
         // TODO: Write validations for the update function
-        $household->fill($request->only('name', 'address'));
+        $household->fill($request->only('name', 'address', 'busstop'));
         $household->save();
         return redirect(route('household.settings'))->with('status', 'Configuration updated successfully!');
     }
